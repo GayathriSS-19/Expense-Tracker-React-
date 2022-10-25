@@ -1,7 +1,7 @@
 import './ExpenseItem.css'
 import React from 'react'
 import ExpenseDate from './ExpenseDate'
-import Card from './Card'
+import Card from '../UI/Card'
 
 export default function ExpenseItem(props) {
     // let title=props.title;

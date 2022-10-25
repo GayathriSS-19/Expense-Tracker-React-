@@ -1,8 +1,8 @@
 import React from 'react'
-import ExpenseItem from './Components/ExpenseItem'
-import Expenses from './Components/Expenses'
+import ExpenseItem from './Components/Expenses/ExpenseItem'
+import Expenses from './Components/Expenses/Expenses'
 
-function App() {
+ const App=() => {      //used arrow function
   let expenses=[
     {
       id:'e1',
