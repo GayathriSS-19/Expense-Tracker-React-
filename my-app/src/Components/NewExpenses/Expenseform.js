@@ -1,9 +1,8 @@
 import React,{useState} from 'react'
-import ExpenseItem from '../Expenses/ExpenseItem'
 import "./Expenseform.css"
 
 
-function Expenseform() {
+function Expenseform(props) {
     const [enteredTitle,setEnteredTitle] =useState("")
     const [enteredAmount,setEnteredAmount] =useState("")
     const [enteredDate,setEnteredDate] =useState("")
@@ -19,12 +18,14 @@ function Expenseform() {
     }
     const submitHandler=(event) =>{
         event.preventDefault();
-
+           //send this object to App.js (ExpenseForm->NewExpenses->App)
         const expenseData={         //Two-way Binding
             title:enteredTitle,
             amount:enteredAmount,
             date:enteredDate
         }
+
+        props.onSaveExpenseData(expenseData);   //calling method from parent
         console.log(expenseData)
         setEnteredAmount("")
         setEnteredDate("")
