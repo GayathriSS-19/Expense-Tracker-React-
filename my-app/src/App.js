@@ -1,10 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import ExpenseItem from './Components/Expenses/ExpenseItem'
 import Expenses from './Components/Expenses/Expenses'
 import NewExpense from './Components/NewExpenses/NewExpense'
 
  const App=() => {      //used arrow function
-  let expenses=[
+  let dummy_expenses=[
     {
       id:'e1',
       title:'School Fee',
@@ -31,8 +31,16 @@ import NewExpense from './Components/NewExpenses/NewExpense'
     },
   ]
 
+
+  const [expenses,setExpenses]=useState(dummy_expenses)
+  
+  
+
   const addExpenseHandler = (expense) =>{
-    console.log(expense)
+    let updatedExpense=[expense,...expenses]
+    setExpenses(updatedExpense);  /*expenses not dummy_expenses*/
+    console.log("Expenses::")
+    console.log(updatedExpense)
   }
   return (
     <div>

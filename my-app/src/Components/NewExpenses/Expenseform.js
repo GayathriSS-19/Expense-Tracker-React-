@@ -18,11 +18,14 @@ function Expenseform(props) {
     }
     const submitHandler=(event) =>{
         event.preventDefault();
-           //send this object to App.js (ExpenseForm->NewExpenses->App)
+        
+        //send this object to App.js (ExpenseForm->NewExpenses->App)
         const expenseData={         //Two-way Binding
             title:enteredTitle,
-            amount:enteredAmount,
-            date:enteredDate
+            amount:+enteredAmount,
+            // date:enteredDate
+            date :new Date(document.getElementById('d').value)
+            
         }
 
         props.onSaveExpenseData(expenseData);   //calling method from parent
@@ -44,7 +47,7 @@ function Expenseform(props) {
         </div>
         <div className='new-expense__control'>
             <label>Date</label>
-            <input type="date" onChange={dateChangeHandler} value={enteredDate}/>
+            <input type="date" id="d" onChange={dateChangeHandler} value={enteredDate}/>
         </div>
       </div>
       <div className='new-expense__actions'>

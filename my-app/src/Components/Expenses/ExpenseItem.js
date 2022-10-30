@@ -6,8 +6,11 @@ import Card from '../UI/Card'
 export default function ExpenseItem(props) {
   const[newTitle,setNewTitle] =useState("Hi")     //newTitle variable created for each and every component
   // let title = props.title
-  const[title,setTitle] =useState(props.title)   //title variable created for each and every component
-   const clickHandler = () =>
+  const[title,setTitle] =useState(props.title) 
+    //title variable created for each and every component
+    console.log("ExpenseItem");
+    console.log(props.title,props.date,props.amount);
+    const clickHandler = () =>
      {
       //  title="New Title..";
   //     console.log(title);
@@ -30,7 +33,7 @@ export default function ExpenseItem(props) {
         <div>{year}</div>
         <div>{day}</div>
       </div> */}
- 
+      
       <ExpenseDate date = {props.date}/>
       <div className='expense-item__description'>
         <h2>{ title }</h2>
